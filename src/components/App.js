@@ -7,10 +7,10 @@ import AddData from '../abis/AddData.json'
 import Navbar from './Navbar'
 
 import Home from './Home'
-import List from './List'
-import Search from './Search'
-import Add from './Add'
-import Search2 from './Search2'
+// import List from './List'
+// import Search from './Search'
+// import Add from './Add'
+// import Search2 from './Search2'
 
 class App extends Component {
 
@@ -90,10 +90,7 @@ class App extends Component {
            <Navbar account={this.state.account} />
             <Switch>
              <Route path="/" component={Home} exact/>
-             <Route path="/List" component={List}/>
-             <Route path="/Search" component={Search}/>
-              <Route path="/Add" component={Add}/>
-               <Route path="/Search2" component={Search2}/>
+            
                <Route component={Error}/>
            </Switch>
         </div> 
