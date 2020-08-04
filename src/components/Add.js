@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Web3 from 'web3'
 
 import './App.css';
 import AddData from '../abis/AddData.json'
 import Navbar from './Navbar'
-
-import Home from './Home'
-import List from './List'
-import Search from './Search'
-import Add from './Add'
-import Search2 from './Search2'
+import Main from './Main'
+import mylogo from '../mylogo.jpg';
+import uulogo from '../uulogo.png';
 
 class App extends Component {
 
@@ -84,20 +80,24 @@ class App extends Component {
   render() {
     return (
       <div>
-       
-        <BrowserRouter>
-        <div>
-           <Navbar account={this.state.account} />
-            <Switch>
-             <Route path="/" component={Home} exact/>
-             <Route path="/List" component={List}/>
-             <Route path="/Search" component={Search}/>
-              <Route path="/Add" component={Add}/>
-               <Route path="/Search2" component={Search2}/>
-               <Route component={Error}/>
-           </Switch>
-        </div> 
-      </BrowserRouter>
+        <Navbar account={this.state.account} />
+        <div className="container-fluid mt-5">
+          <div className="row">
+            <main role="main" className="col-lg-12 d-flex">
+              { this.state.loading
+                ? <div id="loader" className="text-center"><p className="text-center">Loading...</p></div>
+                : <Main
+                 
+                  createData={this.createData}
+                   />
+              }
+            </main>
+          </div>
+        </div>
+         <div class="footer fixed">
+      <img src={mylogo} alt="" width="200" height="61"/>
+      <img src={uulogo} alt="" width="200" height="104"/>
+     </div>
       </div>
     );
   }

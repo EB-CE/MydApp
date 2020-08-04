@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Web3 from 'web3'
 
-import './App.css';
-import AddData from '../abis/AddData.json'
-import Navbar from './Navbar'
+import Web3 from 'web3';
+import AddData from '../abis/AddData.json';
+import mylogo from '../mylogo.jpg';
+import uulogo from '../uulogo.png';
 
-import Home from './Home'
-import List from './List'
-import Search from './Search'
-import Add from './Add'
-import Search2 from './Search2'
+class SearchEntity extends Component {
 
-class App extends Component {
 
   async componentWillMount() {
     await this.loadWeb3()
@@ -67,40 +61,42 @@ class App extends Component {
       loading: true
     }
 
-    this.createData = this.createData.bind(this)
+   
    
   }
 
-  createData(jsonvalue, identity) {
-    this.setState({ loading: true })
-    this.state.adddata.methods.createData(jsonvalue, identity).send({ from: this.state.account })
-    .once('receipt', (receipt) => {
-      this.setState({ loading: false })
-    })
-  }
 
+
+  search(txtSearch)
+{  
+   var title = this.title.value;
+    var a=this.props.datas.map((data, key) => {
+    if (title===data.identity.toString()) {
+           document.getElementById("txtResult").innerHTML= data.jsonvalue;
+                 }                     
+            })
+ }
 
 
   render() {
-    return (
-      <div>
-       
-        <BrowserRouter>
-        <div>
-           <Navbar account={this.state.account} />
-            <Switch>
-             <Route path="/" component={Home} exact/>
-             <Route path="/List" component={List}/>
-             <Route path="/Search" component={Search}/>
-              <Route path="/Add" component={Add}/>
-               <Route path="/Search2" component={Search2}/>
-               <Route component={Error}/>
-           </Switch>
-        </div> 
-      </BrowserRouter>
-      </div>
-    );
+        return (
+        <div id="content">
+      <div className="form searchBox">      
+      <input type="text" placeholder="Search identity.... " className="form-control" id="txtSearch" ref={input => this.title = input}/>
+       <button className="btn btn-info form btnSearch" onClick={()=>this.search(this.props.datas)}>
+      Search
+    </button>
+      <p>json file:</p>
+     <p id="txtResult" className="resualt">No Data...</p>
+     </div>
+     <div class="footer fixed">
+      <img src={mylogo} alt="" width="200" height="61"/>
+      <img src={uulogo} alt="" width="200" height="104"/>
+     </div>
+            </div>
+        );
   }
 }
 
-export default App;
+
+export default SearchEntity;
