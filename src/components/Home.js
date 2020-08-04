@@ -82,7 +82,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar account={this.state.account} />
          <img src={bg1} alt="" className="bg"/>
            <div className="form">
            <p className="font">SecureSECO Ledger - is a distributed ledger maintained by its participants, consisting of software engineers, software producing organizations, and academic partners. SecureSECO stores data about a software’s lifecycle, from source code to executable, with the goal of increasing trust in the worldwide software ecosystem.
@@ -91,7 +91,9 @@ class App extends Component {
             The underlying structure of SecureSECO is a Merkle Directed Acyclic Graph, i.e., where each node is a hashed increment of its parents. Nodes are confirmed by participants in the network. The data is stored in a distributed manner, using a platform-agnostic approach. Currently, the platforms on which data is stored are trusted third parties (Utrecht University, SurfSARA, AWS, later also DANS)
              and these data are replicated amongst clients.
             </p>
-         
+            <Link to="/Add" className="btn btn-info form linkbutton">Add new entity</Link>
+            <Link to="/Search" className="btn btn-info form linkbutton">Search an entity</Link>
+            <Link to="/List" className="btn btn-info form linkbutton">Show all entities</Link>
             </div>
            <div className="footer">
       <img src={mylogo} alt="" width="200" height="61"/>

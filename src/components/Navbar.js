@@ -14,9 +14,26 @@ class Navbar extends Component {
     <span className="navbar-toggler-icon"></span>
   </button>
   <div className="collapse navbar-collapse" id="navbarText">
- 
+    <ul className="navbar-nav mr-auto marginleft">
+      <li className="nav-item active">        
+        <Link to="/" className="nav-link">Home<span className="sr-only">(current)</span></Link>
+      </li>
+      <li className="nav-item">        
+         <Link to="/Add" className="nav-link">Add new entity</Link>
+      </li>
+       <li className="nav-item">        
+         <Link to="/Search" className="nav-link">Search an entity</Link>
+      </li>
+       <li className="nav-item">        
+         <Link to="/List" className="nav-link">Show all entities</Link>
+      </li>
+          </ul>
     <span className="navbar-text">
-     
+       <ul className="navbar-nav px-3">
+          <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
+            <small className="text-white"><span className="bold">Public Key:</span> <span id="account">{this.props.account}</span></small>
+          </li>          
+        </ul>
     </span>
   </div>
 </nav>
