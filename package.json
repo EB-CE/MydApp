@@ -19,8 +19,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "truffle": "^5.1.37",
-    "web3": "^1.0.0-beta.55",
-    "web3-eth-accounts": "^1.2.11"
+    "web3": "^1.0.0-beta.55"
   },
   "homepage": "http://EB-CE.github.io/MydApp",
   "scripts": {
