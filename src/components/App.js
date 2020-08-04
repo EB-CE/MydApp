@@ -87,7 +87,7 @@ class App extends Component {
        
         <BrowserRouter>
         <div>
-           <Navbar account={this.state.account} />
+           <Navbar/>
             <Switch>
              <Route path="/" component={Home} exact/>
             

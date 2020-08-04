@@ -16,11 +16,7 @@ class Navbar extends Component {
   <div className="collapse navbar-collapse" id="navbarText">
  
     <span className="navbar-text">
-       <ul className="navbar-nav px-3">
-          <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-            <small className="text-white"><span className="bold">Public Key:</span> <span id="account">{this.props.account}</span></small>
-          </li>          
-        </ul>
+     
     </span>
   </div>
 </nav>

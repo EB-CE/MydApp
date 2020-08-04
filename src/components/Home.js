@@ -82,7 +82,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar account={this.state.account} />
+        <Navbar />
          <img src={bg1} alt="" className="bg"/>
            <div className="form">
            <p className="font">SecureSECO Ledger - is a distributed ledger maintained by its participants, consisting of software engineers, software producing organizations, and academic partners. SecureSECO stores data about a software’s lifecycle, from source code to executable, with the goal of increasing trust in the worldwide software ecosystem.
