@@ -69,12 +69,12 @@ class SearchEntity extends Component {
 
   search(txtSearch)
 {  
-   var title = this.title.value;
-    var a=this.props.datas.map((data, key) => {
-    if (title===data.identity.toString()) {
-           document.getElementById("txtResult").innerHTML= data.jsonvalue;
-                 }                     
-            })
+   // var title = this.title.value;
+   //  var a=this.props.datas.map((data, key) => {
+   //  if (title===data.identity.toString()) {
+   //         document.getElementById("txtResult").innerHTML= data.jsonvalue;
+   //               }                     
+   //          })
  }
 
 
